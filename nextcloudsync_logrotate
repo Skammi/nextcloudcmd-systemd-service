@@ -1,0 +1,11 @@
+/var/log/nextcloudsync.log  {
+        size 100k
+        missingok
+        create 644 jac jac
+        rotate 4
+        compress
+        delaycompress
+        dateext
+        dateformat -%Y-%m-%d-%s
+        extension .log
+}

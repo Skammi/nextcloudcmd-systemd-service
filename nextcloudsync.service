@@ -1,0 +1,35 @@
+###
+#
+# file:		/usr/lib/systemd/system/nextcloudsync.service
+# host:		a.example.com
+# testhost:	b.example.com
+#
+# date		version	comment
+# ----		-------	-------
+# 221016	v001	Initial version
+#
+# Activity	Done	Date
+# --------	----	----
+# Last edit	jacob	221018 10:50
+# Tested	jacob	221018 10:52
+#
+# Purpose:	This service start and stop the nextcloud sync shell for user jac
+#
+###
+
+[Unit]
+Description=launch nexcloud sync package
+After=multi-user.target
+
+[Service]
+Type=simple
+User=jac
+Group=jac
+
+ExecStart=/home/[USERNAME]/.nextcloud/nextcloud_cmd.sh
+ExecStop=/home/[USERNAME]/.nextcloud/nextcloud_sync_stop.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
+### eof nextcloudsync.service ###
