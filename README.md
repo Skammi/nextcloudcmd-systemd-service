@@ -30,7 +30,7 @@ The Service uses 6 files:
 | nextcloud_cmd.sh | called by the service, executing the nextcloudcmd program at a fixed interval. |
 | nextcloud_sync_stop.cmd | called by the service, stopping the nextcloud_cmd script and the nextcloudcmd program. |
 | nc_sync_env | the environment used by the 2 shell scripts  |
-| excluded | Contains the files excluded in the sync |
+| excluded | Contains the directories excluded in the sync |
 | nextcloudsync_logrotate | used to roate the log file |
 
 1. Get into the project directory.
