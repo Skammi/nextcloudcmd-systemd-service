@@ -32,7 +32,6 @@ The Service uses 6 files:
 | nc_sync_env | the environment used by the 2 shell scripts  |
 | excluded | Contains the files excluded in the sync |
 | nextcloudsync_logrotate | used to roate the log file |
-A step by step series of examples that tell you how to get a development env running
 
 1. Get into the project directory.
 ```
