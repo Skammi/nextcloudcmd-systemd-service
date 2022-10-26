@@ -38,38 +38,53 @@ A step by step series of examples that tell you how to get a development env run
 ```
 cd nextcloudcmd_systemd_service
 ```
+
 2. Adapt the files to the user.
-2.1.Replace ```[USERNAME]``` with the appropriate user name in: nextcloudsync.service, nextcloud_cmd.sh, nextcloud_sync_stop.sh and .nc_sync_env
-2.2. In the environment file nc_sync_env replace ```[NEXTCLOUD_USERNAME]``` and ```[NEXTCLOUD_PASSWORD]``` with the Nextcloud username and password. And provide the appropriate url in the NC_SERVER variable.
+2.1.Replace ```[USERNAME]``` with the appropriate user name in:
+_ nextcloudsync.service
+_ nextcloud_cmd.sh
+_  nextcloud_sync_stop.sh
+_ nc_sync_env
+2.2. In the environment file nc_sync_env replace:
+_ ```[NEXTCLOUD_USERNAME]``` 
+_ ```[NEXTCLOUD_PASSWORD]``` 
+_  "https://nextcloud.example.com"
+
 3. Copy the service file to the sytemd service directory
 ```
 sudo cp nextcloudsync.service /usr/lib/systemd/system/
 ```
+
 4. Copy the log rotate file to the etc/.. directory
 ```
 sudo cp nextcloudsync_logrotate /etc/logrotate.d/
 ```
+
 5. Create a directory in the users home directory.
 ```
 mkdir ~/.nextcloud
 chmod 700 ~/.nextcloud
 ```
+
 6. copy the shell, environment and exclude file to that directory
 ```
 cp *.sh ~/.nextcloud/
 cp {nc_sync_env,excluded} ~/.nextcloud/
 ```
+
 7. Create the logfile
 ```
 sudo touch /var/log/nextcloudsync.log
 ```
-8. If required populate the excluded. Nextcloud syncronise everthing from the server side off the user. The parts that should not be syncronised must be entered in the exclude file
+
+8. If required populate the excluded. Nextcloud synchronize everything from the server side off the user. The parts that should not be synchronized must be entered in the exclude file
 
 9. Enable and start the service.
 ```
 sudo systemctl enable nextcloudsync.service
 sudo systemctl start nextcloudsync.service
 ```
+
 10. Check the status, a successful output looks like this:
 ```
 sudo systemctl status nextcloudsync.service
@@ -81,7 +96,7 @@ sudo systemctl status nextcloudsync.service
    Main PID: 2035 (nextcloud_cmd.s)
       Tasks: 2 (limit: 4201)
      CGroup: /system.slice/nextcloudsync.service
-             ├─2035 /bin/bash /home/jac/.nextcloud/nextcloud_cmd.sh
+             ├─2035 /bin/bash /home/ubuntu/.nextcloud/nextcloud_cmd.sh
              └─2272 sleep 151
 
 Oct 25 19:10:06 minipupper nextcloud_cmd.sh[2035]: nextcloud_cmd.sh: start
@@ -91,8 +106,11 @@ Oct 25 19:17:49 minipupper nextcloud_cmd.sh[2035]: nextcloud_cmd.sh: start
 Oct 25 19:20:24 minipupper nextcloud_cmd.sh[2035]: nextcloud_cmd.sh: start
 ```
 
+## Sync Time Interval
+The time interval between syncs is in the Variable NC_SLEEPTIME. It is default set to 151 seconds approximately 2.5 minutes.
+
 ## Example excluded file
-The default of nextcloudcmd is to syncronise syncronise everthing from the server side off the user. When specifiek directories are not required they have to be placed in the ```excluded``` file. The startpoint is a standard nextcloud directory structure.
+The default of nextcloudcmd is to synchronize everything from the server side off the user. When specific directories are not required they have to be placed in the ```excluded``` file. The start point for this example is a standard nextcloud directory structure.
 ```
 cd ~/nextcloud
 ls | sort
@@ -118,17 +136,16 @@ Documents/Private
 Documents/Readme.md
 Documents/Welcome to Nextcloud Hub.docx
 ```
-When the Top directory Templates and the Documents subdirectries Private and Business are not required, then the excludes file is like this:
+When the Top directory Templates and the Documents sub-directories Private and Business are not required, then the excludes file is like this:
 ```
 # file          ~/.nextcloud/excluded
 Templates
 Documents/Business
 Documents/Private
-
 ```
 
 ## Security Note
-As stated in the description, the nextcloud username and password will be in clear text in the output of ```ps -ef```, when the nextcloudcmd program is running. 
+As stated in the description, the nextcloud username and password will be in clear text in the output of ```ps -ef```, when the nextcloudcmd program is running. That is not a concern in my environment.
 ```
 ps -fu ubuntu
 ```
@@ -140,7 +157,7 @@ ubuntu      2035       1  0 19:01 ?        00:00:00 /bin/bash /home/ubuntu/.next
 ubuntu      2053    2035 32 19:02 ?        00:00:00 /usr/bin/nextcloudcmd -s -u ubuntu -p my1Secret_PWD --unsyncedfolders /home/ubuntu/.nextcloud/excluded --non-interactive /home/ubuntu/nextcloud https://nextcloud.example.com
 ubuntu      2059    1893  0 19:02 pts/0    00:00:00 ps -fu ubuntu
 ```
-That is not a concern in de environment I use it in.
 
-## Authors
+## Author
 Jacob Kamminga
+
