@@ -26,8 +26,6 @@ ME=`basename "$0"`
 NC_USERCMD_DIR="/home/[USERNAME]/.nextcloud"
 source $NC_USERCMD_DIR/nc_sync_env 1>/dev/null
 
-SLEEPTIME=151
-
 # main program
 echo "`date` $ME: start v005" >>$NC_LOGFILE 2>&1
 
@@ -42,7 +40,7 @@ do
 		echo "$ME: start $PROCES"
 		$NC_CMD >>$NC_LOGFILE 2>&1
 	fi
-	sleep $SLEEPTIME &
+	sleep $NC_SLEEPTIME &
 	wait $1 
 	
 done

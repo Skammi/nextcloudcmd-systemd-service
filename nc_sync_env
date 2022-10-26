@@ -9,3 +9,4 @@ export NC_SERVER="https://nextcloud.example.com"
 export NC_CMD="$NC_PATH/$NC_PROCES -s -u $NC_UNAME -p $NC_PWORD --unsyncedfolders $NC_EXCLUDFILE --non-interactive $NC_LOCALDIR $NC_SERVER"
 export NC_LOGFILE="/var/log/nextcloudsync.log"
 export NC_USER_CMD="/usr/bin/bash $NC_USERCMD_DIR/nextcloud_cmd.sh"
+export NC_SLEEPTIME=151
