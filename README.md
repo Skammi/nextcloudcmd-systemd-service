@@ -42,8 +42,11 @@ cd nextcloudcmd_systemd_service
 2. Adapt the files to the user.
 > 2.1.Replace ```[USERNAME]``` with the appropriate user name in:
 >> nextcloudsync.service
+
 >> nextcloud_cmd.sh
+
 >> nextcloud_sync_stop.sh
+
 >> nc_sync_env
 
 > 2.2. In the environment file nc_sync_env replace:
