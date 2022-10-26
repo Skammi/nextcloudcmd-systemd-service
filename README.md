@@ -39,20 +39,17 @@ A step by step series of examples that tell you how to get a development env run
 cd nextcloudcmd_systemd_service
 ```
 
-2. Adapt the files to the user.
-> 2.1.Replace ```[USERNAME]``` with the appropriate user name in:
->> nextcloudsync.service
+2. Adapt the files to the user environment.
+ * Replace ```[USERNAME]``` with the appropriate user name in:
+   * nextcloudsync.service
+   * nextcloud_cmd.sh
+   * nextcloud_sync_stop.sh
+   * nc_sync_env
 
->> nextcloud_cmd.sh
-
->> nextcloud_sync_stop.sh
-
->> nc_sync_env
-
-> 2.2. In the environment file nc_sync_env replace:
->> ```[NEXTCLOUD_USERNAME]``` 
->> ```[NEXTCLOUD_PASSWORD]``` 
->>  "https://nextcloud.example.com"
+ * In the environment file nc_sync_env replace:
+   *  ```[NEXTCLOUD_USERNAME]``` 
+   *  ```[NEXTCLOUD_PASSWORD]``` 
+   *   "https://nextcloud.example.com"
 
 3. Copy the service file to the sytemd service directory
 ```
