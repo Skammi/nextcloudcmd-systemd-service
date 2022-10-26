@@ -40,15 +40,16 @@ cd nextcloudcmd_systemd_service
 ```
 
 2. Adapt the files to the user.
-2.1.Replace ```[USERNAME]``` with the appropriate user name in:
-_ nextcloudsync.service
-_ nextcloud_cmd.sh
-_  nextcloud_sync_stop.sh
-_ nc_sync_env
-2.2. In the environment file nc_sync_env replace:
-_ ```[NEXTCLOUD_USERNAME]``` 
-_ ```[NEXTCLOUD_PASSWORD]``` 
-_  "https://nextcloud.example.com"
+> 2.1.Replace ```[USERNAME]``` with the appropriate user name in:
+>> nextcloudsync.service
+>> nextcloud_cmd.sh
+>> nextcloud_sync_stop.sh
+>> nc_sync_env
+
+> 2.2. In the environment file nc_sync_env replace:
+>> ```[NEXTCLOUD_USERNAME]``` 
+>> ```[NEXTCLOUD_PASSWORD]``` 
+>>  "https://nextcloud.example.com"
 
 3. Copy the service file to the sytemd service directory
 ```
