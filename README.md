@@ -60,10 +60,14 @@ sudo cp nextcloudsync.service /usr/lib/systemd/system/
 sudo cp nextcloudsync_logrotate /etc/logrotate.d/
 ```
 
-5. Create a directory in the users home directory.
+5. Create a hidden directory in the users home directory.
 ```
 mkdir ~/.nextcloud
 chmod 700 ~/.nextcloud
+```
+6. Create the target directory in the users home directory.
+```
+mkdir ~/nextcloud
 ```
 
 6. copy the shell, environment and exclude file to that directory
