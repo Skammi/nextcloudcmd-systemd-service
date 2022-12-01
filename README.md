@@ -123,8 +123,6 @@ Documents
 Nextcloud Manual.pdf
 Nextcloud intro.mp4
 Nextcloud.png
-OurCode
-OurManual
 Photos
 Reasons to use Nextcloud.pdf
 Templates
