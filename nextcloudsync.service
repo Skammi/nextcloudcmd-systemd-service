@@ -23,8 +23,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-User=jac
-Group=jac
+User=[USERNAME]
+Group=[USERNAME]
 
 ExecStart=/home/[USERNAME]/.nextcloud/nextcloud_cmd.sh
 ExecStop=/home/[USERNAME]/.nextcloud/nextcloud_sync_stop.sh
