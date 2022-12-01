@@ -68,9 +68,8 @@ chmod 700 ~/.nextcloud
 
 6. copy the shell, environment and exclude file to that directory
 ```
-cp *.sh ~/.nextcloud/
-cp {nc_sync_env,excluded} ~/.nextcloud/
-chmod +x ~/.nextcloud/
+cp {*.sh,nc_sync_env,excluded} ~/.nextcloud/
+chmod +x ~/.nextcloud/*.sh
 ```
 
 7. Create the logfile
