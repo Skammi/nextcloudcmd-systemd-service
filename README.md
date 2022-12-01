@@ -70,11 +70,13 @@ chmod 700 ~/.nextcloud
 ```
 cp *.sh ~/.nextcloud/
 cp {nc_sync_env,excluded} ~/.nextcloud/
+chmod +x ~/.nextcloud/
 ```
 
 7. Create the logfile
 ```
 sudo touch /var/log/nextcloudsync.log
+sudo chown USER:USER /var/log/nextcloudsync.log
 ```
 
 8. If required populate the excluded. Nextcloud synchronize everything from the server side off the user. The parts that should not be synchronized must be entered in the exclude file
