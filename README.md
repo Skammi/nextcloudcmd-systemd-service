@@ -70,27 +70,27 @@ chmod 700 ~/.nextcloud
 mkdir ~/nextcloud
 ```
 
-6. copy the shell, environment and exclude file to that directory
+7. copy the shell, environment and exclude file to that directory
 ```
 cp {*.sh,nc_sync_env,excluded} ~/.nextcloud/
 chmod +x ~/.nextcloud/*.sh
 ```
 
-7. Create the logfile
+8. Create the logfile
 ```
 sudo touch /var/log/nextcloudsync.log
 sudo chown USER:USER /var/log/nextcloudsync.log
 ```
 
-8. If required populate the excluded. Nextcloud synchronize everything from the server side off the user. The parts that should not be synchronized must be entered in the exclude file
+9. If required populate the excluded. Nextcloud synchronize everything from the server side off the user. The parts that should not be synchronized must be entered in the exclude file
 
-9. Enable and start the service.
+10. Enable and start the service.
 ```
 sudo systemctl enable nextcloudsync.service
 sudo systemctl start nextcloudsync.service
 ```
 
-10. Check the status, a successful output looks like this:
+11. Check the status, a successful output looks like this:
 ```
 sudo systemctl status nextcloudsync.service
 ```
