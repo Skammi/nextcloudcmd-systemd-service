@@ -1,19 +1,5 @@
 # file		~/.nextcloud/excluded
-# Excluded directories in OurCode
-firstlevel_1/secondlevel_1
-firstlevel_1/secondlevel_2
-firstlevel_1/secondlevel_3
-#firstlevel_1/secondlevel_4
-firstlevel_1/secondlevel_5
-firstlevel_1/secondlevel_6
-#firstlevel_2/secondlevel_1
-firstlevel_2/secondlevel_2
-firstlevel_2/secondlevel_3
-firstlevel_2/secondlevel_4
-firstlevel_2/secondlevel_5
-firstlevel_3
-#firstlevel_4
-firstlevel_5/secondlevel_1
-firstlevel_5/secondlevel_2
-#firstlevel_5/secondlevel_3
-firstlevel_5/secondlevel_4
+# Excluded directories
+Templates
+Documents/Business
+Documents/Private
